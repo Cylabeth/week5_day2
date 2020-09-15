@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Montañas rusas que flipas</h1>
+
+    <button id="getRollers">Obtener montañas rusas</button>
+
+    <ul id="rollers"></ul>
+
+    <script>
+
+        document.querySelector('#getRollers').onclick = () => {
+
+            fetch('https://coasters-api.herokuapp.com/')
+                .then(res => res.json())
+                .then(response => {
+                    html = ''
+                    response.forEach(elm => html += `<li>${elm.name} (${elm.model})</li>`)
+                    document.querySelector('#rollers').innerHTML = html
+                })
+        }
+
+    </script>
+
+</body>
+
+</html>

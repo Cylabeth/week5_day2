@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Aplicación de personajes</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+
+                <h4>Nuevo personaje</h4>
+
+                <form id="newCharacterForm">
+                    <input type="text" placeholder="Nombre del personaje"><br><br>
+                    <input type="text" placeholder="Trabajo del personaje"><br><br>
+                    <input type="text" placeholder="Arma secreta del personaje"><br><br>
+                    <input type="submit" value="Guardar personaje" class="btn btn-dark">
+                </form>
+
+            </div>
+            <div class="col-md-4">
+
+                <h4>Actualizar personaje</h4>
+
+                <form id="getCharacterForm">
+                    <input type="text" placeholder="ID del personaje a editar"><br><br>
+                    <input type="submit" value="Recuperar personaje" class="btn btn-dark">
+                </form>
+
+                <hr>
+
+                <form id="editCharacterForm">
+                    <input type="text" placeholder="Nombre del personaje"><br><br>
+                    <input type="text" placeholder="Trabajo del personaje"><br><br>
+                    <input type="text" placeholder="Arma secreta del personaje"><br><br>
+                    <input type="submit" value="Editar personaje" class="btn btn-dark">
+                </form>
+
+            </div>
+            <div class="col-md-4">
+
+                <h4>Personajes actuales:</h4>
+                <ul id="currentCharacters">
+                    <li>Consultando API...</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/api-handler.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
