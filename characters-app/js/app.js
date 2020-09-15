@@ -55,12 +55,15 @@ document.querySelector('#editCharacterForm').onsubmit = e => {
 
     charactersApi
         .editCharacter(characterId, myCharacterToEdit)
-        .then(() => showCurrentCharacters())
+        .then(() => {
+            document.querySelector('#editCharacterForm').reset()
+            showCurrentCharacters()
+        })
         .catch(err => console.log('Hubo un error!', err))
 }
 
 
-
+// Actualizar la lista de personajes
 function showCurrentCharacters() {
 
     charactersApi
